@@ -1,0 +1,68 @@
+@import url("./box.css");
+
+div {
+    font-size: 20px;
+}
+
+.box {
+    width: 100px;  /* 넓이 */
+    height: 100px;  /* 높이 */
+    background: orange;  /* 배경 */
+    transition: 1s;  /* 전환효과 */
+    
+}
+/* 가상 클래스 */
+.box:hover {  /* 마우스 올려두고 있는 경우 */
+    width: 300px;  /* 넓이 */
+    background: royalblue;  /* 배경 */
+}
+.box::before {
+    content: "화이팅(앞)"  /* 필수 */
+}
+.box::after {
+    content: "";  /* 필수 */
+    display: block;  /* before, after는 인라인 요소이기 때문에 가로,세로값을 가지게 만들어주기 위해서는 블럭요소로 변환을 해줘야 한다. */
+    width: 30px;
+    height: 30px;
+    background-color: royalblue;
+
+}
+.box2 {
+    width: 100px;  /* 넓이 */
+    height: 100px;  /* 높이 */
+    background: orange;  /* 배경 */
+    transition: 1s;  /* 전환효과 */
+    
+}
+.box2:active {  /* 마우스를 클릭하고 있는 경우 */
+    width: 300px;  /* 넓이 */
+    background: royalblue;  /* 배경 */
+}
+.box2:focus {  /* 박스는 원래 focus 가상클래스가 적용이 안되는데 속성으로 tabindex="-1"을 추가해주면 focus가 적용이 된다. */
+    background: red;  /* 배경 */
+}
+input {
+
+}
+input:focus {
+    background: yellow;
+}
+[type="text"] {
+    background-color: green;
+}
+[data-fruit-name] {
+    color: red;
+}
+.parent {
+    width: 300px;
+    height: 200px;
+    background-color: orangered;
+}
+.child {
+    width: 100px;
+    height: inherit;  /* 부모요소로부터 상속받아 사용 */
+    background-color: inherit;
+    position: fixed;  /* 화면의 viewport를 기준으로 배치하겠다. */
+    top: 100px;  /* 위에서 100px */
+    right: 10px;  /* 오른쪽에서 10px */
+}
